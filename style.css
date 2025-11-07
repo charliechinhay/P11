@@ -31,6 +31,7 @@ input[type="text"] {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 button {
@@ -44,4 +45,36 @@ button {
 
 button:hover {
   background: #4cae4c;
+}
+
+#risultati {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+li h3 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+li p {
+  margin: 0;
+  color: #666;
+}
+li a {
+  color: #337ab7;
+  text-decoration: none;
+}
+li a:hover {
+  text-decoration: underline;
 }

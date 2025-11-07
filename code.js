@@ -35,6 +35,8 @@ Dopo aver raccolto ed elaborato i dati, e’ il momento di mostrare i risultati 
 
 */
 
+// const { createElement } = require("react");
+
 // NON MODIFICARE QUESTO ARRAY!
 
 const jobs = [
@@ -154,3 +156,20 @@ function searchJobs(titolo, zona) {
 }
 
 console.log(searchJobs(titolo, zona));
+
+// Aggiungi qui il codice per eseguire la ricerca al click del bottone
+function eseguiRicerca() {
+  let inputLocation = document.querySelector("#location").value;
+  let inputTitolo = document.querySelector("#job-title").value;
+  let risultati = searchJobs(inputTitolo, inputLocation);
+  let risultatiDiv = document.querySelector("#risultati");
+  risultatiDiv.innerHTML = ""; // Pulisce i risultati precedenti
+  let lista = document.createElement("ul");
+  for (let i = 0; i < risultati.result.length; i++) {
+    let job = risultati.result[i];
+    let listItem = document.createElement("li");
+    listItem.textContent = `${job.location} - ${job.title}`;
+    lista.appendChild(listItem);
+  }
+  risultatiDiv.appendChild(lista);
+}
