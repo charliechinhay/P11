@@ -162,16 +162,20 @@ function eseguiRicerca() {
   let inputLocation = document.querySelector("#location").value;
   let inputTitolo = document.querySelector("#job-title").value;
 
+  // Controllo se entrambi i campi sono vuoti
   if (inputTitolo === "" && inputLocation === "") {
     alert("Inserisci almeno un campo per cercare un lavoro!");
     return;
   }
 
+  // Chiamare la funzione di ricerca con i valori degli input
   let risultati = searchJobs(inputTitolo, inputLocation);
   let risultatiDiv = document.querySelector("#risultati");
 
+  // Pulire i risultati precedenti
   risultatiDiv.innerHTML = "";
 
+  // Mostrare i risultati non trovati
   if (risultati.count === 0) {
     risultatiDiv.textContent = "Nessun risultato trovato 😕";
     return;
