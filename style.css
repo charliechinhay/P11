@@ -14,11 +14,6 @@ form {
   margin: 50px auto;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-}
-
 label {
   display: block;
   margin-bottom: 5px;
@@ -49,6 +44,7 @@ button:hover {
 
 #risultati {
   margin-top: 20px;
+  max-width: 600px;
 }
 
 ul {
@@ -66,10 +62,12 @@ li {
 li h3 {
   margin: 0 0 5px 0;
   color: #333;
+  font-size: 18px;
 }
 li p {
   margin: 0;
   color: #666;
+  font-size: 14px;
 }
 li a {
   color: #337ab7;
@@ -77,4 +75,11 @@ li a {
 }
 li a:hover {
   text-decoration: underline;
+  color: #23527c;
+}
+
+div#risultati {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
 }
