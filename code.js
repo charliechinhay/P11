@@ -161,14 +161,28 @@ console.log(searchJobs(titolo, zona));
 function eseguiRicerca() {
   let inputLocation = document.querySelector("#location").value;
   let inputTitolo = document.querySelector("#job-title").value;
+
+  if (inputTitolo === "" && inputLocation === "") {
+    alert("Inserisci almeno un campo per cercare un lavoro!");
+    return;
+  }
+
   let risultati = searchJobs(inputTitolo, inputLocation);
   let risultatiDiv = document.querySelector("#risultati");
-  risultatiDiv.innerHTML = ""; // Pulisce i risultati precedenti
+
+  risultatiDiv.innerHTML = "";
+
+  if (risultati.count === 0) {
+    risultatiDiv.textContent = "Nessun risultato trovato 😕";
+    return;
+  }
+
   let lista = document.createElement("ul");
+
   for (let i = 0; i < risultati.result.length; i++) {
     let job = risultati.result[i];
     let listItem = document.createElement("li");
-    listItem.textContent = `${job.location} - ${job.title}`;
+    listItem.textContent = `Job ${i + 1}: ${job.location} - ${job.title}`;
     lista.appendChild(listItem);
   }
   risultatiDiv.appendChild(lista);
